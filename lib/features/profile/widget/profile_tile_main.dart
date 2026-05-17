@@ -16,19 +16,11 @@ class ProfileTileMain extends HookConsumerWidget {
   final ProfileEntity profile;
   final bool isMain;
   static const verifiedDomains = [
+    'prostix.pro',
     'hiddify.com',
-    // 't.me',
-    // 'telegram.me',
-    // 'instagram.com',
-    // 'x.com',
-    // 'facebook.com',
   ];
   static const verifiedLinks = [
-    'https://t.me/hiddify',
-    'https://t.me/hiddify_board',
-    'https://instagram.com/hiddify_com',
-    'https://x.com/hiddify_com',
-    'https://facebook.com/hiddify',
+    'https://t.me/prostix_pro',
   ];
   Future<void> _launchUrlWithCheck(BuildContext context, WidgetRef ref, String url) async {
     final uri = Uri.parse(url);
@@ -204,6 +196,9 @@ class ProfileTileMain extends HookConsumerWidget {
     }
     if (host.endsWith('facebook.com')) {
       return uri.pathSegments.lastWhere((e) => e.isNotEmpty, orElse: () => '');
+    }
+    if (host.endsWith('prostix.pro')) {
+      return "Prostix";
     }
     if (host.endsWith('hiddify.com')) {
       return "Hiddify";
